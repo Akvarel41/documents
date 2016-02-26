@@ -4,15 +4,12 @@
  * and open the template in the editor.
  */
 
-package spektr;
+package akvarel;
 
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Toolkit;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.WindowConstants;
+
+import java.awt.*;
+import javax.swing.*;
+
 
 
 public class Spektr extends JFrame {
@@ -24,12 +21,12 @@ public class Spektr extends JFrame {
         int screenheight;
         screenheight = (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 3);
         setSize(screenwidth, screenheight);
-        
         setResizable(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         Container container = getContentPane();
         panel.setDoubleBuffered(true);
-        container.add(panel);
+        container.setBackground(new Color(255, 255, 255));
+        
 
     }
     
