@@ -15,19 +15,16 @@ import java.util.Random;
 
 public class Spektr extends JFrame {
     private JPanel panel = new JPanel();
-    private JPanel panel2 = new JPanel(new GridLayout(5, 5, 2, 2));
-    
-    private int[][] numbers = new int[5][5];
-    
+    private JPanel panel2 = new JPanel(new GridLayout(5, 5, 2, 2));    
+    private int[][] numbers = new int[5][5];    
     public  Spektr() {
         super("Pyatnashki by c0nst");
-        panel.setLayout(null);
-
-      
+        panel.setLayout(null);        
+        getContentPane().setBackground(new Color(255, 255, 255));      
         int screenheight;
         screenheight = (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 2);
-//        setSize(screenheight, screenheight);
-        setSize(700, 700);
+        setSize(screenheight, screenheight);
+        //setSize(700, 700);
         setResizable(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         JButton button; 
@@ -42,21 +39,17 @@ public class Spektr extends JFrame {
         panel.setDoubleBuffered(true);
         container.add(panel);
         container.add(panel2);
-        panel2.setBackground(new Color(255, 255, 255));
-        panel2.setBounds(0, button_height, button_width * 3, 700 - button_height);
+//        panel2.setBackground(new Color(255, 255, 255));
+//        panel2.setBounds(0, button_height + 10, button_width * 2, button_width * 2);
         panel.setBackground(new Color(255, 255, 255));
         panel.validate();
-        panel.repaint();  
-        
+        panel.repaint();          
         DrawField(button_height, button_width);
         setLayout(null);
-        panel.setBounds(0, 0, button_width * 3, button_height);
-        
+        panel.setBounds(0, 0, button_width * 3, button_height);        
         add(panel);
-        add(panel2);
-        
+        add(panel2);        
     }
-
     public void DrawField(int button_height, int button_width) {
         int k = 1;
         for (int i = 0; i < 5; i++) {
@@ -66,15 +59,13 @@ public class Spektr extends JFrame {
             }
         }
         panel2.removeAll();
- for (int i = 0; i < 5; i++) {
+   for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
               JButton button;
                 button = new JButton( Integer.toString(numbers[i][j]));
-                
                 if (numbers[i][j] == 1)
                 {
-                    button.setBackground(new Color(255, 0, 0)); 
-                   
+                    button.setBackground(new Color(255, 0, 0));                    
                 }
                 if (numbers[i][j] == 2)
                 {
@@ -167,8 +158,7 @@ public class Spektr extends JFrame {
                 if (numbers[i][j] == 24)
                 {
                     button.setBackground(new Color(136, 0, 80));                    
-                }
-                
+                }               
                 button.setFocusable(false);
                 panel2.add(button);
                 if (numbers[i][j] == 25) {
@@ -177,19 +167,12 @@ public class Spektr extends JFrame {
             }
         }
         panel2.setBackground(new Color(255, 255, 255));
-        panel2.setBounds(100, button_height, button_width * 2, 700 - button_height - 100);
+        panel2.setBounds(button_width / 2, button_height + button_height/2, button_width * 2, button_width * 2);
         panel2.validate();
-        panel2.repaint();
-        
-        
+        panel2.repaint();       
     }
-
-
-
-    
     public static void main(String[] args) {
-        JFrame app = new Spektr();
-        
+        JFrame app = new Spektr();        
         app.setVisible(true);
     }
 }
