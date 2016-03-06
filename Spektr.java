@@ -17,14 +17,14 @@ public class Spektr extends JFrame {
     private JPanel panel = new JPanel();
     private JPanel panel2 = new JPanel(new GridLayout(5, 5, 2, 2));    
     private int[][] numbers = new int[5][5];    
-    public  Spektr() {
-        super("Pyatnashki by c0nst");
+    public  Spektr()//создание окна игры
+    {
+        super("Pyatnashki ");
         panel.setLayout(null);        
         getContentPane().setBackground(new Color(255, 255, 255));      
         int screenheight;
         screenheight = (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 2);
-        setSize(screenheight, screenheight);
-        //setSize(700, 700);
+        setSize(screenheight, screenheight);        
         setResizable(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         JButton button; 
@@ -39,8 +39,6 @@ public class Spektr extends JFrame {
         panel.setDoubleBuffered(true);
         container.add(panel);
         container.add(panel2);
-//        panel2.setBackground(new Color(255, 255, 255));
-//        panel2.setBounds(0, button_height + 10, button_width * 2, button_width * 2);
         panel.setBackground(new Color(255, 255, 255));
         panel.validate();
         panel.repaint();          
@@ -50,7 +48,8 @@ public class Spektr extends JFrame {
         add(panel);
         add(panel2);        
     }
-    public void DrawField(int button_height, int button_width) {
+    public void DrawField(int button_height, int button_width) //Отображение на экране заданного поля
+    {
         int k = 1;
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
@@ -59,7 +58,7 @@ public class Spektr extends JFrame {
             }
         }
         panel2.removeAll();
-   for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
               JButton button;
                 button = new JButton( Integer.toString(numbers[i][j]));
