@@ -17,7 +17,7 @@ public class Spektr extends JFrame {
     private JPanel panel = new JPanel();
     private JPanel panel2 = new JPanel(new GridLayout(5, 5, 2, 2));    
     private int[][] numbers = new int[5][5];    
-    public  Spektr()//создание окна игры
+    public  Spektr()//создание интерфейса игры
     {
         super("Pyatnashki ");
         panel.setLayout(null);        
