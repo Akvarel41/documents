@@ -1,3 +1,5 @@
 language: java 
 jdk: "7"
+install: true
+
 
