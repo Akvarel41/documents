@@ -1,5 +1,5 @@
 language: java 
 jdk: "7"
-install: true
+install: ant build.compiler.emacs=true
 
 
