@@ -10,3 +10,5 @@ deploy:
  password: "41akvarel"
  file: "V1"
  skip_cleanup: true
+ on:
+  tags: true
