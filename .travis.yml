@@ -8,7 +8,7 @@ deploy:
  provider: "releases"  
  user: "Akvarel41" 
  password: "41akvarel"
- file: "Spektr.java"
+ file: "B1"
  skip_cleanup: true
  on:
   tags: true
