@@ -1,7 +1,5 @@
 language: java 
-branches:
-  only:
-    - dev
+
 addons:
  ssh_known_hosts: git@github.com:41Akvarel/spektr.git
 after_success:
@@ -12,5 +10,5 @@ deploy:
  provider: "releases"  
  user: "Akvarel41" 
  password: "41akvarel"
- file: "new_tag"
+ file: "Spectr"
  skip_cleanup: true
