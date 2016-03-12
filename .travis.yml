@@ -1,10 +1,11 @@
 language: java 
+addons:
+ ssh_known_hosts: git@github.com:41Akvarel/spektr.git
 deploy:
-	provider: releases 
-	api_key: "GITHUB OAUTH TOKEN" 
-	file: "FILE TO UPLOAD" 
-	skip_cleanup: true 
-	on: 
-	tags: true
-
-
+ provider: "releases"  
+ user: "Akvarel41" 
+ password: "41akvarel"
+ file: "FILE TO UPLOAD"
+ skip_cleanup: true
+ on:
+  tags: true
