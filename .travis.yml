@@ -10,5 +10,5 @@ deploy:
  provider: "releases"  
  user: "Akvarel41" 
  password: "41akvarel"
- file: "Spectr"
+ file: "Spektr"
  skip_cleanup: true
