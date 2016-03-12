@@ -4,10 +4,13 @@ addons:
  ssh_known_hosts: git@github.com:41Akvarel/spektr.git
 after_success:
  git tag -a -m "new_tag" new_tag
+ git push --tags
 
 deploy:
  provider: "releases"  
  user: "Akvarel41" 
  password: "41akvarel"
- file: "Spektr"
+ file: "Spectr"
  skip_cleanup: true
+ on:
+  tag: true
