@@ -1,5 +1,5 @@
-Версия: 1.0.{построить} 
-skip_tags: правда 
-shallow_clone: правда 
-построить: 
- подробности: минимальный
+version: 1.0.{build}
+skip_tags: true
+shallow_clone: true
+build:
+  verbosity: minimal
