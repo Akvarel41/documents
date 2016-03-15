@@ -1,16 +1,17 @@
-
-<project name="Akvarel" default="compile">
-  <property name="src.java" location ="src"/>
-  <property name="build.dir" location="build"/>
-  <property name="build.classes.java" location="${build.dir}/class/java"/>
-  <target name="make.dirs" description="Making  of the auxillary dirs" >
-    <mkdir dir="${build.dir}"/>
-    <mkdir dir="${build.classes.java}"/>
-  </target>
-  <target name="compile" description="Compilation of the classes" depends="make.dirs">
-    <echo>Compilation ....</echo>  
-    <javac includeantruntime="false"  destdir="${build.classes.java}">
-      <src path="${src.java}"/>
-    </javac>
-  </target>
+<?xml version="1.0"?>
+<project name="Akvarel"default="compile">
+    <target name="compile"
+     description="compile the Java source code to class files">
+        <mkdir dir="classes"/>
+        <javac srcdir="."destdir="classes"/>
+    </target>
+    <target name="jar"depends="compile"
+             description="create a Jar file for the application">
+        <jar destfile="hello.jar">
+            <fileset dir="classes"includes="**/*.class"/>
+            <manifest>
+                <attribute name="Main-Class"value="HelloProgram"/>
+            </manifest>
+        </jar>
+    </target>
 </project>
