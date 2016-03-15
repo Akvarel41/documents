@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <project name="Akvarel"default="compile">
     <target name="compile"
      description="compile the Java source code to class files">
