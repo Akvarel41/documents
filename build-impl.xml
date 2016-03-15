@@ -20,6 +20,7 @@ is divided into following sections:
 
         -->
 <project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc" basedir=".." default="default" name="Akvarel-impl">
+    <import file="build-native.xml"/>
     <fail message="Please build using Ant 1.8.0 or higher.">
         <condition>
             <not>
@@ -219,7 +220,9 @@ is divided into following sections:
         <!-- Empty placeholder for easier customization. -->
         <!-- You can override this target in the ../build.xml file. -->
     </target>
+    <target depends="-pre-init,-init-private,-init-user,-init-project,-do-init" name="-init-check">
 
+    </target>
     <target name="-init-macrodef-property">
         <macrodef name="property" uri="http://www.netbeans.org/ns/j2se-project/1">
             <attribute name="name"/>
@@ -1386,7 +1389,7 @@ is divided into following sections:
         </condition>
     </target>
     <target depends="-check-call-dep" if="should.call.dep" name="-maybe-call-dep">
-        <ant antfile="${call.script}" inheritall="false" target="${call.target}">
+        <ant antfile="${call.script}" inheritall="false" target = "${call.target}">
             <propertyset>
                 <propertyref prefix="transfer."/>
                 <mapper from="transfer.*" to="*" type="glob"/>
